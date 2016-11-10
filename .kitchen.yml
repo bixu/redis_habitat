@@ -10,7 +10,6 @@ verifier:
 
 platforms:
   - name: ubuntu-16.04
-  - name: centos-7.2
 
 suites:
   - name: default
@@ -19,4 +18,3 @@ suites:
     verifier:
       inspec_tests:
         - test/recipes
-    attributes:
