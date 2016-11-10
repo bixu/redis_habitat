@@ -10,8 +10,11 @@ user 'hab' do
   action :create
 end
 
-hab_package "core/redis" do
-  action :install
+# install core/hab-sup to help prevent race conditions in inspec
+%w{core/hab-sup core/redis}.each do |pkg|
+  hab_package pkg do
+    action :install
+  end
 end
 
 hab_service 'core/redis' do
